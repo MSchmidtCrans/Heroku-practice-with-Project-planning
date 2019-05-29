@@ -1,0 +1,159 @@
+body {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Baloo Bhai', cursive;
+    background-color: rgb(210, 220, 9);
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background-color: rgb(210, 220, 9);
+    padding: 1px;
+    margin: auto;
+    text-align: center;
+    height: 10%;
+}
+
+h1 {
+    font-size: 75px;
+}
+
+.header button {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgb(217, 233, 47);
+    color: black;
+    border-radius: 10px;
+    margin: -40px auto 0px auto;
+    transform: translate(-50%, -50%);
+}
+
+.header button:hover {
+    background: rgb(107, 115, 12);
+    color: white;
+    box-shadow: none;
+}
+
+.plusImg {
+    position: relative;
+    left: 30px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    transition: 0.2s;
+}
+
+.plusImg:hover {
+    width: 45px;
+    height: 45px;
+}
+
+.mainContainer {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(234, 243, 140);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.columnFlex {
+    background-color: rgb(227, 238, 89);
+    min-width: 400px;
+    height: 28em;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.columnFlex h2 {
+    border-bottom: 1px solid rgb(199, 214, 31);
+    font-size: 35px;
+}
+
+.modalContainerClass {
+    display: none;
+    position: absolute;
+    background-color:rgba(0,0,0, 0.7);
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.modalClass {
+    position: absolute;
+    width: 275px;
+    height: 6em;
+    padding: 5px;
+    line-height: 2;
+    background-color: rgba(226, 238, 93, 1);
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 8px 14px 7px rgba(230, 218, 218, 0.4);
+}
+
+#actCancelBtn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+    padding: 4px;
+    inset: 0px;
+    background: rgba(233, 47, 56, 0.589);
+    color: black;
+    border-radius: 10px;
+}
+
+#actSubmitBtn {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 12px;
+    padding: 4px;
+    inset: 0px;
+    background: rgba(47, 233, 47, 0.568);
+    color: black;
+    border-radius: 10px;
+}
+
+.modalClass button:hover {
+    color: white;
+    box-shadow: none;
+}
+
+.columnFlex span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 18px;
+    width: 75%;
+    height: 2em;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.425), 0 6px 20px 0 rgba(0, 0, 0, 0.438);  
+    cursor: pointer; 
+    transition: 0.2s;
+}
+
+.columnFlex span:hover {
+    width: 85%;
+    font-size: 24px;
+}
+
+.urgencyLow {
+    background-color: rgba(219, 206, 27, 0.74);
+}
+
+.urgencyNormal {
+    background-color: rgba(143, 209, 36, 0.74); 
+}
+
+.urgencyHigh {
+    background-color: rgba(206, 35, 35, 0.74); 
+}
