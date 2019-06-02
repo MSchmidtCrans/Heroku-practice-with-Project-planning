@@ -1,13 +1,13 @@
-$dbopts = parse_url(getenv('DATABASE_URL'));
+
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
                array(
                 'pdo.server' => array(
                    'driver'   => 'pgsql',
-                   'user' => $dbopts["user"],
-                   'password' => $dbopts["pass"],
-                   'host' => $dbopts["host"],
-                   'port' => $dbopts["port"],
-                   'dbname' => ltrim($dbopts["path"],'/')
+                   'user' => "xmmutkkqfftoxs",
+                   'password' => "66872be8b5b4f4677cb34f033b54c18f7b8205e1a133eba23adeb99d882e40ab",
+                   'host' => "ec2-54-221-214-3.compute-1.amazonaws.com",
+                   'port' =>  "5432",
+                   'dbname' => "d9f424d1vt6cmt")
                    )
                )
 );
