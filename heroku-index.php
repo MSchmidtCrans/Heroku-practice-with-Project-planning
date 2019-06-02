@@ -38,6 +38,7 @@ $user = $item;
     }
 
 echo $user;
+echo $user[username];
 
 }catch (PDOException $e){
  // report error message
