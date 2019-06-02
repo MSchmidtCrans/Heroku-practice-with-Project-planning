@@ -1,10 +1,20 @@
 <?php
+
 echo ('Hallo Michael');
 
-function getdb() {
-    $db = pg_connect("host=ec2-54-221-214-3.compute-1.amazonaws.com port=5432 dbname=d9f424d1vt6cmt user=laxmmutkkqfftoxsmb password=66872be8b5b4f4677cb34f033b54c18f7b8205e1a133eba23adeb99d882e40ab") or die('connection failed');
-    return $db;
+$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+ 
+try{
+ // create a PostgreSQL database connection
+ $conn = new PDO($dsn);
+ 
+ // display a message if connected to the PostgreSQL successfully
+ if($conn){
+ echo "Connected to the <strong>$db</strong> database successfully!";
+ }
+}catch (PDOException $e){
+ // report error message
+ echo $e->getMessage();
 }
-getdb();
 
 ?>
