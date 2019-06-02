@@ -29,7 +29,7 @@ foreach($result as $item) {
 
 //Add person array
 $user = $item;
-echp $item;
+echo $item;
 }
 
  if (isset($user)) {
