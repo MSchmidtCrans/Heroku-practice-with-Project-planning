@@ -15,7 +15,8 @@ try{
  $result = pg_query($query);
 
  $mydata = pg_fetch_assoc($result); 
- echo $mydata;
+ echo ("test 2");
+ echo $mydata[username];
 
 
  // display a message if connected to the PostgreSQL successfully
