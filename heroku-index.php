@@ -37,6 +37,8 @@ $user = $item;
      echo ('result is not set</br>');
     }
 
+echo $user;
+
 }catch (PDOException $e){
  // report error message
  echo $e->getMessage();
