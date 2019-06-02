@@ -21,11 +21,17 @@ try{
  $query = "SELECT * FROM users";
  $result = pg_query($query);
 
- $mydata = pg_fetch_assoc($result); 
- echo $mydata[username];
- echo ("version check</br>");
+ //Set array to receive record
+ $user = array();
+    
+//Loop through all rows from table
+foreach($result as $item) {   
 
- if (isset($mydata)) {
+//Add person array
+$user = $item;
+}
+
+ if (isset($item)) {
      echo("result is set </br>");
  } else {
      echo ('result is not set</br>');
