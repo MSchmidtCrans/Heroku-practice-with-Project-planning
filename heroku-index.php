@@ -14,18 +14,18 @@ try{
 
  // display a message if connected to the PostgreSQL successfully
  if($conn){
- echo "Connected to the <strong>$db</strong> database successfully!";
+ echo "Connected to the <strong>$db</strong> database successfully!</br>";
  }
 
  //Make query to test connection
  $query = "SELECT * FROM users";
  $result = pg_query($query);
- echo $result;
 
  $mydata = pg_fetch_assoc($result); 
  echo $mydata[username];
+ echo ("version check</br>");
 
- if (isset($result)) {
+ if (isset($mydata)) {
      echo("result is set </br>");
  } else {
      echo ('result is not set</br>');
