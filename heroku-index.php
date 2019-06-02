@@ -20,9 +20,10 @@ try{
  //Make query to test connection
  $query = "SELECT * FROM users";
  $result = pg_query($query);
+ echo $result;
 
  $mydata = pg_fetch_assoc($result); 
- echo ($mydata->username);
+ echo $mydata[username];
 
  if (isset($result)) {
      echo("result is set </br>");
