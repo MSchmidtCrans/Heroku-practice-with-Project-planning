@@ -2,6 +2,8 @@
 
 echo ('Hallo Michael');
 
+require_once 'dbconfig.php';
+
 $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
  
 try{
