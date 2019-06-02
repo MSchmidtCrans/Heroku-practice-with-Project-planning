@@ -15,9 +15,13 @@ try{
  $result = pg_query($query);
 
  $mydata = pg_fetch_assoc($result); 
- echo ("test 2");
  echo $mydata[username];
 
+ if (isset($result)) {
+     echo("result is set </br>");
+ } else {
+     echo ('result is not set</br>');
+    }
 
  // display a message if connected to the PostgreSQL successfully
  if($conn){
