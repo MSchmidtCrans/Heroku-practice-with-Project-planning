@@ -1,4 +1,4 @@
-
+<?php
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
                array(
                 'pdo.server' => array(
@@ -26,3 +26,4 @@ $app->get('/db/', function() use($app) {
     'names' => $names
   ));
 });
+?>
