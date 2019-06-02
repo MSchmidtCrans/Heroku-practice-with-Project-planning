@@ -2,7 +2,7 @@
 
 echo ('Hallo Michael');
 
-$dsn = "pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password";
+$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
  
 try{
  // create a PostgreSQL database connection
