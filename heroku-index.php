@@ -31,7 +31,7 @@ foreach($result as $item) {
 $user = $item;
 }
 
- if (isset($item)) {
+ if (isset($user)) {
      echo("result is set </br>");
  } else {
      echo ('result is not set</br>');
