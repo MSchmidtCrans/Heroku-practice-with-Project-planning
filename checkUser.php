@@ -14,10 +14,13 @@ $servername = "localhost";
 $username = "phpdb";
 $password = "wachtwoord";
 
+require_once 'dbconfig.php';
 
-try {
-    //connect to DB
-    $conn = new PDO("mysql:host=$servername;dbname=usercheck", $username, $password);
+$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+ 
+try{
+    // create a PostgreSQL database connection
+    $conn = new PDO($dsn);
 
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
