@@ -23,6 +23,8 @@ try{
      echo ('result is not set</br>');
     }
 
+    while($record = pg_fetch_assoc($result)){echo $record;
+    }
 
 }catch (PDOException $e){
  // report error message
