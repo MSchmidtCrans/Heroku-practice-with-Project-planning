@@ -2,16 +2,11 @@
 
 header('Content-type: application/json; charset=utf-8');
 
-// Start the session
-session_start();
-  
-
-
 
 require_once 'dbconfig.php';
 
-//$dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
-$dbconnect = "host=$host dbname=$db user=$username password=$password";
+$dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
+
 
 try{
 
