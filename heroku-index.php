@@ -20,7 +20,7 @@ try{
  $arr = pg_fetch_array($result);
  echo $arr;
 
- if (isset($user)) {
+ if (isset($arr)) {
      echo("result is set </br>");
  } else {
      echo ('result is not set</br>');
