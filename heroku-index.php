@@ -15,12 +15,9 @@ try{
 
  //Make query to test connection
  $query = "SELECT * FROM users";
- $result = pg_query($query);
+ $result = pg_query($conn, $query);
 
- $arr = pg_fetch_array($result);
- echo $arr;
-
- if (isset($arr)) {
+ if (isset($result)) {
      echo("result is set </br>");
  } else {
      echo ('result is not set</br>');
