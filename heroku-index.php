@@ -6,7 +6,9 @@ $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password"
  
 try{
  // create a PostgreSQL database connection
- $conn = new PDO($dsn);
+ //$conn = new PDO($dsn);
+
+ $conn = pg_connect($dsn);
  
  // display a message if connected to the PostgreSQL successfully
  if($conn){
