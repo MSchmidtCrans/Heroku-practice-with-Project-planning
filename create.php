@@ -10,7 +10,9 @@ $myJson=$_POST['jsonObj'];
 $dataFields = json_decode($myJson);
 $usernow = $_SESSION['usernow'];
 
-$useruniqid = $usernow;
+//create unique id
+$bytes = random_bytes(5);
+$useruniqid = $usernow.(bin2hex($bytes));
 
 //Import connection setting for DB
 require_once 'dbconfig.php';

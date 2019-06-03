@@ -40,7 +40,7 @@ $("#actSubmitBtn").click(function() {
     $("input[name='urgentie']").prop("checked", false);
     $("#modalContainer").css("display", "none");
     } else {
-        
+        alert('Graag een omschrijving toevoegen.')
     }     
 
 
