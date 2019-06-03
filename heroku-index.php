@@ -15,7 +15,7 @@ try{
 
  //Make query to test connection
  $query = "SELECT * FROM users";
- $result = pg_query($query);
+ $result = pg_query($conn, $query);
 
  //Set array to receive record
  $user = array();
@@ -34,7 +34,7 @@ $user = $item;
      echo ('result is not set</br>');
     }
 
-echo $user[username];
+echo $user;
 
 }catch (PDOException $e){
  // report error message
