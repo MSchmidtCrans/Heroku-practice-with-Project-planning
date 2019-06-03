@@ -37,6 +37,10 @@
 <body>
     <div class="header">
         <p><h1>PROJECT PLANNING</h1></p>
+        <?php 
+        echo("<h3>gebruiker ".($_SESSION['usernow'])."</h2>");
+        ?>
+
     </div>
 
     <!--Columns-->

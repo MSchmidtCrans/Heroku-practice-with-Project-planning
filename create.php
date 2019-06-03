@@ -12,7 +12,7 @@ $usernow = $_SESSION['usernow'];
 
 //create unique id
 $bytes = random_bytes(5);
-$useruniqid = $usernow.(bin2hex($bytes));
+$useruniqid = $usernow.'|'.(bin2hex($bytes));
 
 //Import connection setting for DB
 require_once 'dbconfig.php';

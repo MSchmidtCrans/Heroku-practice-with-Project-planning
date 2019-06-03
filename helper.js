@@ -20,10 +20,10 @@ function drop(ev) {
 //Create new task based on object
 function createTaskFromObj(obj) {
     if (obj.urgencyvalue == "middel") {
-        $("#rowOne").append("<span id='" + obj.id + "' class='urgencyNormal' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
+        $("#rowOne").append("<span id='" + obj.useruniqid + "' class='urgencyNormal' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
     } else if(obj.urgencyvalue == "hoog") {
-        $("#rowOne").append("<span id='" + obj.id + "' class='urgencyHigh' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
+        $("#rowOne").append("<span id='" + obj.useruniqid + "' class='urgencyHigh' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
     } else {
-        $("#rowOne").append("<span id='" + obj.id + "' class='urgencyLow' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
+        $("#rowOne").append("<span id='" + obj.useruniqid + "' class='urgencyLow' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
     }
 }  

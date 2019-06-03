@@ -5,17 +5,15 @@ $("#actSubmitBtn").click(function() {
 
     let actValue = $("#input1").val();
     let actUrgency = $("input[name='urgentie']:checked").val();
-    let idClass = actValue + actUrgency;
 
+    //Create json object
+    let jsonObj = {};
+    jsonObj.action = actValue;
+    jsonObj.urgency = actUrgency;
 
     //Check if text field isn't empty before adding activity 
-    if (actValue != "") {
-
-        //Create json object
-        let jsonObj = {};
-        jsonObj.action = actValue;
-        jsonObj.urgency = actUrgency;
-
+    if (actValue != "" && jsonObj.urgency != undefined) {
+    
         //Ajaxcall to create new record in database
         $.ajax({
             url: "create.php",
@@ -24,7 +22,8 @@ $("#actSubmitBtn").click(function() {
             dataType : "JSON",
    
             //Upon succes
-            success: function(result) { 
+            success: function(result) {
+                //console.log(result); 
                if (result){console.log('succes')};
                createTaskFromObj(result); 
             },
@@ -36,11 +35,11 @@ $("#actSubmitBtn").click(function() {
             })
 
     //Close Modal and reset modal fields 
-    $("#inputAct").val("");
+    $("#input1").val("");
     $("input[name='urgentie']").prop("checked", false);
     $("#modalContainer").css("display", "none");
     } else {
-        alert('Graag een omschrijving toevoegen.')
+        alert('Graag een omschrijving invullen en/of urgentie kiezen.')
     }     
 
 
