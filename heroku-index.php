@@ -29,7 +29,7 @@ try{
     }
 
     while($record = pg_fetch_array($result)){
-        echo $record[$username];
+        echo $record[0];
     }
 
 }catch (PDOException $e){
