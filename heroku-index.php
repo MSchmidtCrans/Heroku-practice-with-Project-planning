@@ -2,14 +2,15 @@
 
 require_once 'dbconfig.php';
 
-$dsn = "host=$host;port=5432;dbname=$db;user=$username;password=$password";
-echo $dsn;
+$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+$dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
+echo $dbconnect;
  
 try{
  // create a PostgreSQL database connection
  //$conn = new PDO($dsn);
 
- $conn = pg_connect($dsn);
+ $conn = pg_connect($dbconnect);
  
  // display a message if connected to the PostgreSQL successfully
  if($conn){
