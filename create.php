@@ -8,41 +8,30 @@ header('Content-type: application/json; charset=utf-8');
 
 $myJson=$_POST['jsonObj'];
 $dataFields = json_decode($myJson);
+$usernow = $_SESSION['usernow'];
 
+$useruniqid = $usernow;
 
-$servername = "localhost";
-$username = "phpdb";
-$password = "wachtwoord";
+//Import connection setting for DB
+require_once 'dbconfig.php';
+$dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
+
 
 try {
     //connect to DB
-    $conn = new PDO("mysql:host=$servername;dbname=planning", $username, $password);
-
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = pg_connect($dbconnect);
     
     //Insert new data to database 
     
-    $sql = "INSERT INTO tasks (textvalue, urgencyvalue)
-    VALUES ('$dataFields->action', '$dataFields->urgency')";    
-    $conn->exec($sql);
+    $query = "INSERT INTO tasks (username, textvalue, urgencyvalue, useruniqid) VALUES ('$usernow', '$dataFields->action', '$dataFields->urgency', '$useruniqid')";    
+    $result = pg_query($conn, $query);
 
-    //Get last inserted record to bounce back to js
-    $last_id = $conn->lastInsertId();
-
-    //Prepare and execute mysql query
-    $adressquery = $conn->prepare("SELECT * FROM tasks WHERE id=$last_id");
-    $adressquery->execute();
+    //Get last inserted task to bounce back
+    $query = ("SELECT * FROM tasks WHERE useruniqid='$useruniqid'");
+    $result = pg_query($conn, $query);
 
     //Set array to receive record
-    $task = array();
-    
-    //Loop through all rows from table
-    foreach($adressquery as $item) {   
-
-    //Add person array
-    $task = $item;
-    }
+    $task = pg_fetch_array($result);
 
     //Sent array as JSON
     echo json_encode($task);

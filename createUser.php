@@ -25,7 +25,7 @@ try {
     $result = pg_query($conn, $query);
 
     //Get last inserted user to bounce back
-    $usernow = 'michael';
+    $usernow = '$dataFields->username';
     $query = ("SELECT * FROM users WHERE username='$usernow'");
     $result = pg_query($conn, $query);
 
