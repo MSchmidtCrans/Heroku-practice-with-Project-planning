@@ -2,7 +2,8 @@
 
 require_once 'dbconfig.php';
 
-$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+$dsn = "host=$host;port=5432;dbname=$db;user=$username;password=$password";
+echo $dsn;
  
 try{
  // create a PostgreSQL database connection
