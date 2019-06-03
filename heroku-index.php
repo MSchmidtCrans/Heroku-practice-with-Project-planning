@@ -2,9 +2,9 @@
 
 require_once 'dbconfig.php';
 
-$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+//$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
 $dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
-echo $dbconnect;
+
  
 try{
  // create a PostgreSQL database connection
@@ -20,7 +20,7 @@ try{
  //Make query to test connection
  $query = "SELECT * FROM users";
 
- $result = pg_query($query);
+ $result = pg_query($conn, $query);
 
  if (isset($result)) {
      echo("result is set </br>");
@@ -29,7 +29,7 @@ try{
     }
 
     while($record = pg_fetch_array($result)){
-        echo $record;
+        echo $record[$username];
     }
 
 }catch (PDOException $e){
