@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'dbconfig.php';
 
 $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
@@ -9,9 +8,6 @@ try{
  // create a PostgreSQL database connection
  $conn = new PDO($dsn);
  
-
-
-
  // display a message if connected to the PostgreSQL successfully
  if($conn){
  echo "Connected to the <strong>$db</strong> database successfully!</br>";
@@ -29,7 +25,7 @@ foreach($result as $item) {
 
 //Add person array
 $user = $item;
-echo $item;
+
 }
 
  if (isset($user)) {
@@ -38,7 +34,6 @@ echo $item;
      echo ('result is not set</br>');
     }
 
-echo $user;
 echo $user[username];
 
 }catch (PDOException $e){
