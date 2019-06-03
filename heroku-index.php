@@ -14,7 +14,7 @@ try{
  }
 
  //Make query to test connection
- $query = "SELECT * FROM users";
+ $query = "SELECT * FROM users;";
  $result = pg_query($query);
 
  if (isset($result)) {
@@ -23,7 +23,8 @@ try{
      echo ('result is not set</br>');
     }
 
-    while($record = pg_fetch_assoc($result)){echo $record;
+    while($record = pg_fetch_array($result)){
+        echo $record;
     }
 
 }catch (PDOException $e){
