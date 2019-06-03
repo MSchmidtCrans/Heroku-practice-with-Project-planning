@@ -17,16 +17,8 @@ try{
  $query = "SELECT * FROM users";
  $result = pg_query($conn, $query);
 
- //Set array to receive record
- $user = array();
-    
-//Loop through all rows from table
-foreach($result as $item) {   
-
-//Add person array
-$user = $item;
-
-}
+ $arr = pg_fetch_array($result);
+ echo $arr;
 
  if (isset($user)) {
      echo("result is set </br>");
@@ -34,7 +26,6 @@ $user = $item;
      echo ('result is not set</br>');
     }
 
-echo $user;
 
 }catch (PDOException $e){
  // report error message
