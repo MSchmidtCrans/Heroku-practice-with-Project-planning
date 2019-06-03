@@ -5,39 +5,28 @@
 
 header('Content-type: application/json; charset=utf-8');
 
-$myJson=$_POST['jsonObj'];
-$dataFields = json_decode($myJson);
+//$myJson=$_POST['username'];
+//$usernow = $_POST['username'];
+$usernow = 'ivo';
 
-
-$servername = "localhost";
-$username = "phpdb";
-$password = "wachtwoord";
+//Import connection setting for DB
+require_once 'dbconfig.php';
+$dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
 
 
 try {
     //connect to DB
-    $conn = new PDO("mysql:host=$servername;dbname=usercheck", $username, $password);
+    $conn = pg_connect($dbconnect);
 
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    //Prepare and execute mysql query
-    $adressquery = $conn->prepare("SELECT * FROM users WHERE username='$dataFields->username'");
-    $adressquery->execute();
+    $query = ("SELECT * FROM users WHERE username='$usernow'");
+    $result = pg_query($conn, $query);
 
     //Set array to receive record
-    $person = array();
+    $person = pg_fetch_array($result);
     
-    //Loop through all rows from table
-    foreach($adressquery as $item) {   
-
-    //Add person array
-    $person = $item;
-    }
-
     //Set user to true if user password exists and password is correct
     $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $dataFields->$username;
+    $_SESSION['usernow'] = $person[1];
 
     //Sent array as JSON
     echo json_encode($person);

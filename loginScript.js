@@ -5,24 +5,20 @@ $(document).ready(function(){
         let username = $("#username").val();
         let pswrd = $("#pswrd").val();
 
-        //Create json object
-        let jsonObj = {};
-        jsonObj.username = username;
-        jsonObj.passwrd = pswrd;
-
         //Ajaxcall to create new record in database
         $.ajax({
             url: "login.php",
-            data: {jsonObj: JSON.stringify(jsonObj)},
+            data: {username: username},
             type: "POST",
             dataType : "JSON",
    
             //Upon succes
             success: function(result) { 
+                
                if (result){console.log('succes')};
-               //console.log(result);
+               console.log(result);
                if (result.passwrd === pswrd){ 
-                   window.open("http://10.1.254.73/Projectplanning-met-backend/index.php", "_self");
+                   window.open("http://localhost/Heroku-practice-with-Project-planning/index.php", "_self");
                 } else {
                     alert("Verkeerd wachtwoord of gebruiker ingevoerd. Probeer het nogmaals..")
                     resetFields();

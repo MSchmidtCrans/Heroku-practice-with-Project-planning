@@ -21,7 +21,7 @@
     
     //Set time out on session
     $time = $_SERVER['REQUEST_TIME'];
-    $timeout_duration = 10;
+    $timeout_duration = 1000;
 
     if (isset($_SESSION['LAST_ACTIVITY']) && ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
         session_unset();

@@ -6,13 +6,8 @@ session_start();
 
 header('Content-type: application/json; charset=utf-8');
 
-//$myJson=$_POST['jsonObj'];
-//$dataFields = json_decode($myJson);
-
-
-$servername = "localhost";
-$username = "phpdb";
-$password = "wachtwoord";
+$myJson=$_POST['jsonObj'];
+$dataFields = json_decode($myJson);
 
 //Import connection setting for DB
 require_once 'dbconfig.php';
@@ -24,11 +19,7 @@ try {
     //connect to DB
     $conn = pg_connect($dbconnect);
 
-    //Prepare and execute mysql query
-    //$adressquery = $conn->prepare("SELECT * FROM users WHERE username = '$dataFields->username'");
-    //$adressquery->execute();
-
-    $query = ("SELECT * FROM users WHERE username = 'michael'");
+    $query = ("SELECT * FROM users WHERE username = '$dataFields->username'");
     $result = pg_query($conn, $query);
 
     //Set array to receive record
