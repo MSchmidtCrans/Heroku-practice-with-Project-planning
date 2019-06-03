@@ -14,8 +14,9 @@ try{
  }
 
  //Make query to test connection
- $query = "SELECT * FROM users;";
- $result = pg_query($query);
+ //$query = "SELECT * FROM users";
+
+ $result = pg_query($conn, "SELECT * FROM users");
 
  if (isset($result)) {
      echo("result is set </br>");
