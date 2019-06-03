@@ -15,7 +15,7 @@ try{
 
  //Make query to test connection
  $query = "SELECT * FROM users";
- $result = pg_query($conn, $query);
+ $result = pg_query($query);
 
  $arr = pg_fetch_array($result);
  echo $arr;
