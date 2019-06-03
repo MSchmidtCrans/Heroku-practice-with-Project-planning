@@ -10,26 +10,29 @@ $myJson=$_POST['jsonObj'];
 $dataFields = json_decode($myJson);
 
 
-$servername = "localhost";
-$username = "phpdb";
-$password = "wachtwoord";
+//Import connection setting for DB
+require_once 'dbconfig.php';
+$dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
 
 
 try {
     //connect to DB
-    $conn = new PDO("mysql:host=$servername;dbname=usercheck", $username, $password);
-
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = pg_connect($dbconnect);
     
     //Insert new data to users table 
-    $sql = "INSERT INTO users (username, firstname, lastname, passwrd, mailadress)
+    $query = "INSERT INTO users (username, firstname, lastname, passwrd, mailadress)
     VALUES ('$dataFields->username', '$dataFields->firstname', '$dataFields->lastname', '$dataFields->passwrd', '$dataFields->mailadress')";    
-    $conn->exec($sql);
+    $result = pg_query($conn, $query);
 
-    //Get last inserted record to bounce back to js
-    $last_id = $conn->lastInsertId();
+    //Get last inserted user to bounce back
+    $usernow = 'michael';
+    $query = ("SELECT * FROM users WHERE username='$usernow'");
+    $result = pg_query($conn, $query);
 
+    //Set array to receive record
+    $person = pg_fetch_array($result);
+
+    /*
     //Creat new contacts and planborden tables for new user
     $tablename = ($dataFields->username).'contacts';
     $sql = "CREATE TABLE $tablename(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -41,23 +44,10 @@ try {
     $sql = "CREATE TABLE $tablename(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             planname VARCHAR(30))";
     $conn->exec($sql);
-
-    //Prepare and execute mysql query
-    $adressquery = $conn->prepare("SELECT * FROM users WHERE id=$last_id");
-    $adressquery->execute();
-
-    //Set array to receive record
-    $user = array();
-    
-    //Loop through all rows from table
-    foreach($adressquery as $item) {   
-
-    //Add person array
-    $user = $item;
-    }
+        */
 
     //Sent array as JSON
-    echo json_encode($user);
+    echo json_encode($person);
     }
 
     catch(PDOException $e)

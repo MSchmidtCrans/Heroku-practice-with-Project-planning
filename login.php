@@ -5,9 +5,7 @@
 
 header('Content-type: application/json; charset=utf-8');
 
-//$myJson=$_POST['username'];
-//$usernow = $_POST['username'];
-$usernow = 'ivo';
+$usernow = $_POST['username'];
 
 //Import connection setting for DB
 require_once 'dbconfig.php';

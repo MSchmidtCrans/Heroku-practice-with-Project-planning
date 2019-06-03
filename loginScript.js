@@ -34,6 +34,10 @@ $(document).ready(function(){
 
     $(".newUserBtn").click(function() {
 
+        if($("#newusername").val() == "" || $("#newpswrd").val() == "" || $("#newmailadress").val() == "" || $("#newfirstname").val() == "" || $("#newlastname").val() == "" ) {
+            alert("Graag alle velden invullen!");
+        } else {
+
         //Create json object
         let jsonObj = {};
         jsonObj.username = $("#newusername").val();
@@ -86,6 +90,7 @@ $(document).ready(function(){
            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
            }  
         })
+    }
     })
 });
 
