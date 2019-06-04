@@ -13,8 +13,15 @@ ev.dataTransfer.setData("text", ev.target.id);
 //On drop drop the source div in the target div
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+    
+    //Find the new parent div to update in the database
+    parentDiv = ev.target.id;
+    console.log(parentDiv);
+
+    //Call update script to update row column
+    
   }
 
 //Create new task based on object
