@@ -16,7 +16,7 @@
     session_start();
     /*
     if (!isset($_SESSION['loggedin'])) {
-        header( 'https://infinite-temple-34967.herokuapp.com/loginstart.php' );
+        header( 'https://infinite-temple-34967.herokuapp.com/loginstrt.php' );
     }
     */
     //Set time out on session
