@@ -11,7 +11,8 @@ body {
 .header {
     background-color: rgb(210, 220, 9);
     text-align: center;
-    height: 10%;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -65,13 +66,13 @@ h1 {
     background-color: rgb(234, 243, 140);
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding-top: 10px;
 }
 
 .columnFlex {
     background-color: rgb(227, 238, 89);
     min-width: 400px;
-    min-height: 35em;
+    min-height: 30em;
     border-radius: 50px;
     text-align: center;
 }

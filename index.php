@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="header">
-        <p><h1>PROJECT PLANNING</h1></p>
+        <h1>PROJECT PLANNING</h1>
         <?php 
         echo("<h3>gebruiker ".($_SESSION['usernow'])."</h2>");
         ?>
