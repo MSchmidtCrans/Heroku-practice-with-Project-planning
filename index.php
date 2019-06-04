@@ -40,7 +40,7 @@
         <?php 
         echo("<h3>gebruiker ".($_SESSION['usernow'])."</h2>");
         ?>
-    <a href="http://localhost/Heroku-practice-with-Project-planning/loginStart.php#">andere gebruiker</a>
+    <a href="https://infinite-temple-34967.herokuapp.com/loginStart.php#">andere gebruiker</a>
     
     </div>
 
