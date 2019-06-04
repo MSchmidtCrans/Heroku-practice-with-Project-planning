@@ -18,7 +18,7 @@ $("#actSubmitBtn").click(function() {
     
         //Ajaxcall to create new record in database
         $.ajax({
-            url: "create.php",
+            url: "createtask.php",
             data: {jsonObj: JSON.stringify(jsonObj)},
             type: "POST",
             dataType : "JSON",
