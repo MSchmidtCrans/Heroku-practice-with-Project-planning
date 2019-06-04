@@ -15,7 +15,7 @@
     // Start the session
     session_start();
     
-    if ($_SESSION['usernow'] == "") {
+    if (!isset($_SESSION['usernow'])) {
         header( 'https://infinite-temple-34967.herokuapp.com/loginstrt.php' );
     }
     
