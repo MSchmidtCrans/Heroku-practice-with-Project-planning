@@ -18,11 +18,13 @@ try {
     $conn = pg_connect($dbconnect);
     
     //Update record to database   
-    $query = "UPDATE tasks SET rowid = '$rowid' WHERE useruniqid = '$useruniqid'";  
+    $query = "SELECT * FROM tasks WHERE username = '$usernow'";  
     $result = pg_query($conn, $query);
-
+    
+    $jsonArr = pg_fetch_all($result);
+    
     //Reply AJAX call
-    echo ('succes');
+    echo json_encode($jsonArr);
     }
 
     catch(PDOException $e)

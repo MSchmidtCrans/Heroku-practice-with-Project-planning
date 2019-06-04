@@ -10,33 +10,29 @@ body {
 
 .header {
     background-color: rgb(210, 220, 9);
-    padding: 1px;
-    margin: auto;
     text-align: center;
     height: 10%;
 }
 
 h1 {
     font-size: 75px;
+    margin:0px;
 }
 
-.header button {
-    position: absolute;
+.header a {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: lighter;
     padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: rgb(217, 233, 47);
+    text-decoration: none;
+    border: 1px solid rgb(143, 141, 141);
+    background:  rgb(210, 220, 9);
     color: black;
     border-radius: 10px;
-    margin: -40px auto 0px auto;
-    transform: translate(-50%, -50%);
 }
 
-.header button:hover {
+.header a:hover {
     background: rgb(107, 115, 12);
     color: white;
-    box-shadow: none;
 }
 
 .plusImg {
@@ -66,7 +62,7 @@ h1 {
 .columnFlex {
     background-color: rgb(227, 238, 89);
     min-width: 400px;
-    min-height: 20em;
+    min-height: 35em;
     border-radius: 50px;
     text-align: center;
 }

@@ -10,6 +10,11 @@ $.ajax({
     //Upon succes
     success: function(result) { 
        if (result) {console.log("SUCCES")};
+       
+       //Iterate through the JSON array for all entries
+            for (x in result) {
+                createTaskFromObj(result[x]);
+     }
     },
 
     //Upon error
@@ -38,8 +43,6 @@ function drop(ev) {
     
     //Find the new parent div to update in the database
     parentDiv = ev.target.id;
-    console.log(parentDiv);
-    console.log(data);
 
     //Call update script to update row column
     $.ajax({
@@ -62,11 +65,13 @@ function drop(ev) {
 
 //Create new task based on object
 function createTaskFromObj(obj) {
+    
+    //Check urgency and set correct color then append to the correct rowid
     if (obj.urgencyvalue == "middel") {
-        $("#rowOne").append("<span id='" + obj.useruniqid + "' class='urgencyNormal' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
+        $("#" + obj.rowid).append("<span id='" + obj.useruniqid + "' class='urgencyNormal' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
     } else if(obj.urgencyvalue == "hoog") {
-        $("#rowOne").append("<span id='" + obj.useruniqid + "' class='urgencyHigh' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
+        $("#" + obj.rowid).append("<span id='" + obj.useruniqid + "' class='urgencyHigh' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
     } else {
-        $("#rowOne").append("<span id='" + obj.useruniqid + "' class='urgencyLow' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
+        $("#" + obj.rowid).append("<span id='" + obj.useruniqid + "' class='urgencyLow' draggable=true ondragstart=drag(event)>" + obj.textvalue + "</span>");
     }
 }  
