@@ -63,18 +63,38 @@ function drop(ev) {
     })
   }
 
+//Delete div function
+function deletediv(id) {
+    $.ajax({
+        url: "deleteTask.php",
+        data: {divid: id},
+        type: "GET",
+        dataType : "TEXT",
+
+        //Upon succes
+        success: function(result) { 
+           if (result) {console.log("SUCCES")};
+        },
+
+        //Upon error
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+           alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+       }  
+    })
+}
+
 //Create new task based on object
 function createTaskFromObj(obj) {
     
     //Check urgency and set correct color then append to the correct rowid
     if (obj.urgencyvalue == "middel") {
         $("#" + obj.rowid).append("<span id='" + obj.useruniqid + "' class='urgencyNormal' draggable=true ondragstart=drag(event)>" 
-        + obj.textvalue + "<img src='media/cancel.png' class='delimg' alt='delete task button' width='25' height='25'></span>");
+        + obj.textvalue + "<img src='media/cancel.png' id='delete' class='delimg' alt='delete task button' width='25' height='25'></span>");
     } else if(obj.urgencyvalue == "hoog") {
         $("#" + obj.rowid).append("<span id='" + obj.useruniqid + "' class='urgencyHigh' draggable=true ondragstart=drag(event)>" 
-        + obj.textvalue + "<img src='media/cancel.png' class='delimg' alt='delete task button' width='25' height='25'></span>");
+        + obj.textvalue + "<img src='media/cancel.png' id='delete' class='delimg' alt='delete task button' width='25' height='25'></span>");
     } else {
         $("#" + obj.rowid).append("<span id='" + obj.useruniqid + "' class='urgencyLow' draggable=true ondragstart=drag(event)>" 
-        + obj.textvalue + "<img src='media/cancel.png' class='delimg' alt='delete task button' width='25' height='25'></span>");
+        + obj.textvalue + "<img src='media/cancel.png' id='delete' class='delimg' alt='delete task button' width='25' height='25'></span>");
     }
 }  

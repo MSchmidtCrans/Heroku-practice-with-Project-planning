@@ -43,9 +43,15 @@ $("#actSubmitBtn").click(function() {
     } else {
         alert('Graag een omschrijving invullen en/of urgentie kiezen.')
     }     
-
-
 }); //Click event end
+
+$(document).on('click','#delete',function(){
+    let parentid = $(this).parent().attr('id');
+    deletediv(parentid);
+    //Call delete script
+
+});
+
 
 }) //Document ready end
 

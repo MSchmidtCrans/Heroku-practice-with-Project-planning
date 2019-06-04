@@ -35,11 +35,12 @@ h1 {
     color: white;
 }
 
+
 .delimg {
     position: relative;
     float: right;
     padding-top: 6px;
-    padding-right: 4px;
+    padding-right: px;
     border-radius: 10px;
 }
 
