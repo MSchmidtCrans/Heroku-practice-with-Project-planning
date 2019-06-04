@@ -35,6 +35,14 @@ h1 {
     color: white;
 }
 
+.delimg {
+    position: relative;
+    float: right;
+    padding-top: 6px;
+    padding-right: 4px;
+    border-radius: 10px;
+}
+
 .plusImg {
     position: relative;
     left: 30px;

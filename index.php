@@ -21,7 +21,7 @@
     
     //Set time out on session
     $time = $_SERVER['REQUEST_TIME'];
-    $timeout_duration = 300;
+    $timeout_duration = 1000;
 
     if (isset($_SESSION['LAST_ACTIVITY']) && ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
         session_unset();
@@ -41,6 +41,7 @@
         echo("<h3>gebruiker ".($_SESSION['usernow'])."</h2>");
         ?>
     <a href="http://localhost/Heroku-practice-with-Project-planning/loginStart.php#">andere gebruiker</a>
+    
     </div>
 
     <!--Columns-->
