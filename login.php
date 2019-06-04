@@ -19,10 +19,12 @@ try {
     $query = ("SELECT * FROM users WHERE username='$usernow'");
     $result = pg_query($conn, $query);
 
+    sleep(2);
+
     //Set array to receive record
     $person = pg_fetch_array($result);
     
-    //Set user to true if user password exists and password is correct
+    //Set user to true
     $_SESSION['loggedin'] = true;
     $_SESSION['usernow'] = $person[1];
 
