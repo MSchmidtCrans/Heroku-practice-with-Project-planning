@@ -17,6 +17,7 @@ $(document).ready(function(){
                 
                if (result){console.log('succes')};
                console.log(result);
+               alert('ok');
                if (result.passwrd == pswrd){ 
                    window.open("https://infinite-temple-34967.herokuapp.com/index.php#", "_self");
                 } else {
