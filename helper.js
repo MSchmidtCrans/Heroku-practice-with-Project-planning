@@ -64,16 +64,19 @@ function drop(ev) {
   }
 
 //Delete div function
-function deletediv(id) {
+function deletetask(id) {
+    let divid = '#'+id;
+    console.log(divid);
     $.ajax({
         url: "deleteTask.php",
-        data: {divid: id},
-        type: "GET",
+        data: {id: id},
+        type: "POST",
         dataType : "TEXT",
 
         //Upon succes
         success: function(result) { 
-           if (result) {console.log("SUCCES")};
+           if (result) {console.log('succes')};
+           ;
         },
 
         //Upon error

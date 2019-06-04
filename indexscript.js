@@ -47,8 +47,8 @@ $("#actSubmitBtn").click(function() {
 
 $(document).on('click','#delete',function(){
     let parentid = $(this).parent().attr('id');
-    deletediv(parentid);
-    //Call delete script
+    deletetask(parentid);
+    $(this).parent().remove();
 
 });
 
