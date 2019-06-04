@@ -16,7 +16,7 @@
     session_start();
     
     if (!isset($_SESSION['loggedin'])) {
-        header( 'Location: loginstart.php' );
+        header( 'https://infinite-temple-34967.herokuapp.com/loginstart.php' );
     }
     
     //Set time out on session
@@ -39,7 +39,7 @@
         <?php 
         echo("<h3>gebruiker ".($_SESSION['usernow'])."</h2>");
         ?>
-    <a href="https://infinite-temple-34967.herokuapp.com/loginstart.php#">andere gebruiker</a>
+    <a href="https://infinite-temple-34967.herokuapp.com/loginstrt.php#">andere gebruiker</a>
     
     </div>
 
