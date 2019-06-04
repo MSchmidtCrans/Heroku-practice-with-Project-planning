@@ -15,7 +15,7 @@
     // Start the session
     session_start();
     
-    if (!isset($_SESSION['loggedin'])) {
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
         header( 'https://infinite-temple-34967.herokuapp.com/loginstrt.php' );
     }
     
