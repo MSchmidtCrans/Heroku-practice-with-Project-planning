@@ -16,7 +16,7 @@ try {
     //connect to DB
     $conn = pg_connect($dbconnect);
 
-    sleep(2);
+    sleep(1);
 
     $query = ("SELECT * FROM users WHERE username='$usernow'");
     $result = pg_query($conn, $query);
@@ -27,6 +27,8 @@ try {
     //Set user to true
     $_SESSION['loggedin'] = true;
     $_SESSION['usernow'] = $person[1];
+
+sleep(1);
 
     //Sent array as JSON
     echo json_encode($person);
