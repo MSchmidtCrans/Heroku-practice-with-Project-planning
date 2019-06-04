@@ -16,10 +16,10 @@ try {
     //connect to DB
     $conn = pg_connect($dbconnect);
 
+    sleep(2);
+
     $query = ("SELECT * FROM users WHERE username='$usernow'");
     $result = pg_query($conn, $query);
-
-    sleep(2);
 
     //Set array to receive record
     $person = pg_fetch_array($result);
