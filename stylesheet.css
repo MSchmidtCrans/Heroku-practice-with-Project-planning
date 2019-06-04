@@ -41,7 +41,7 @@ h1 {
     position: relative;
     float: right;
     padding-top: 6px;
-    padding-right: px;
+    padding-right: 4px;
     border-radius: 10px;
 }
 
@@ -67,6 +67,7 @@ h1 {
     width: 100%;
     height: 100%;
     padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 .columnFlex {

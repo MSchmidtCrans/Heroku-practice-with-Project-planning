@@ -17,8 +17,13 @@ try {
     //connect to DB
     $conn = pg_connect($dbconnect);
     
-    //Update record to database   
+    //Update record to database 
+    if ($usernow == "admin") {
+        $query ="SELECT * FROM tasks";
+    }  else {
     $query = "SELECT * FROM tasks WHERE username = '$usernow'";  
+    }
+    
     $result = pg_query($conn, $query);
     
     $jsonArr = pg_fetch_all($result);
