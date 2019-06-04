@@ -3,7 +3,7 @@ function pullUserTasks(){
 
 //Call pulltasks script
 $.ajax({
-    url: "pulltasks.php",
+    url: "pulltsks.php",
     type: "POST",
     dataType : "JSON",
 
@@ -46,7 +46,7 @@ function drop(ev) {
 
     //Call update script to update row column
     $.ajax({
-        url: "updatetask.php",
+        url: "updatetsk.php",
         data: {divid: data, rowid: parentDiv},
         type: "POST",
         dataType : "TEXT",
@@ -68,7 +68,7 @@ function deletetask(id) {
     let divid = '#'+id;
     console.log(divid);
     $.ajax({
-        url: "deletetask.php",
+        url: "deletetsk.php",
         data: {id: id},
         type: "POST",
         dataType : "TEXT",
