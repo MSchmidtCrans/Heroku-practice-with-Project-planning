@@ -18,7 +18,7 @@ $(document).ready(function(){
                if (result){console.log('succes')};
                console.log(result);
                if (result.passwrd == pswrd){ 
-                   window.open("https://infinite-temple-34967.herokuapp.com/index.php", "_self");
+                   window.open("https://infinite-temple-34967.herokuapp.com/index.php#", "_self");
                 } else {
                     alert("Verkeerd wachtwoord of gebruiker ingevoerd. Probeer het nogmaals..")
                     resetFields();
