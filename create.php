@@ -25,7 +25,7 @@ try {
     
     //Insert new data to database 
     
-    $query = "INSERT INTO tasks (username, textvalue, urgencyvalue, useruniqid) VALUES ('$usernow', '$dataFields->action', '$dataFields->urgency', '$useruniqid')";    
+    $query = "INSERT INTO tasks (username, textvalue, urgencyvalue, useruniqid, rowid) VALUES ('$usernow', '$dataFields->action', '$dataFields->urgency', '$useruniqid', 'rowOne')";    
     $result = pg_query($conn, $query);
 
     //Get last inserted task to bounce back

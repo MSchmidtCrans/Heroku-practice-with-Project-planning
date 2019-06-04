@@ -19,9 +19,25 @@ function drop(ev) {
     //Find the new parent div to update in the database
     parentDiv = ev.target.id;
     console.log(parentDiv);
+    console.log(data);
 
     //Call update script to update row column
-    
+    $.ajax({
+        url: "updateTask.php",
+        data: {divid: data, rowid: parentDiv},
+        type: "POST",
+        dataType : "TEXT",
+
+        //Upon succes
+        success: function(result) { 
+           if (result) {console.log("SUCCES")};
+        },
+
+        //Upon error
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+           alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+       }  
+    })
   }
 
 //Create new task based on object
