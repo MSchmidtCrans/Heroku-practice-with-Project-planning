@@ -49,7 +49,7 @@ $(document).ready(function(){
         //Check if username already exists (must be unique!!)
         //Ajaxcall to lookup username
         $.ajax({
-            url: "checkUser.php",
+            url: "checkuser.php",
             data: {jsonObj: JSON.stringify(jsonObj)},
             type: "POST",
             dataType : "JSON",
@@ -63,7 +63,7 @@ $(document).ready(function(){
 
                         //Ajaxcall to create new record in database
                         $.ajax({
-                            url: "createUser.php",
+                            url: "createuser.php",
                             data: {jsonObj: JSON.stringify(jsonObj)},
                             type: "POST",
                             dataType : "JSON",
