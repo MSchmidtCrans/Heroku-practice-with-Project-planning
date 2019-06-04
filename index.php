@@ -14,11 +14,11 @@
     <?php
     // Start the session
     session_start();
-    
+    /*
     if (!isset($_SESSION['loggedin'])) {
         header( 'https://infinite-temple-34967.herokuapp.com/loginstart.php' );
     }
-    
+    */
     //Set time out on session
     $time = $_SERVER['REQUEST_TIME'];
     $timeout_duration = 1000;
