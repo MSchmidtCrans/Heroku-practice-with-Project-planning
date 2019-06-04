@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="indexscript.js"></script>
-    <script src="helper.js"></script>
+    <script src="https://infinite-temple-34967.herokuapp.com/indexscript.js"></script>
+    <script src="https://infinite-temple-34967.herokuapp.com/helper.js"></script>
     <title>Projecplanning</title>
 
     <?php
