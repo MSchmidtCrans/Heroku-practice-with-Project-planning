@@ -1,4 +1,24 @@
-//Drag and drop functions
+//Pull tasks from database based on username
+function pullUserTasks(){
+
+//Call pulltasks script
+$.ajax({
+    url: "pullTasks.php",
+    type: "POST",
+    dataType : "JSON",
+
+    //Upon succes
+    success: function(result) { 
+       if (result) {console.log("SUCCES")};
+    },
+
+    //Upon error
+    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+       alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+   }  
+})
+
+};
 
 //Set the column divs to allow drops from drags
 function allowDrop(ev) {

@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+pullUserTasks();
+    
 //Get values at buttonclick in activity modal
 $("#actSubmitBtn").click(function() {
 

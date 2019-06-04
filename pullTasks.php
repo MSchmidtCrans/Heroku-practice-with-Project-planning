@@ -2,13 +2,12 @@
 
 // Start the session
 session_start();
-  
 
 header('Content-type: application/json; charset=utf-8');
 
-$useruniqid=$_POST['divid'];
-$rowid=$_POST['rowid'];
-
+//Set username
+$usernow = $_SESSION['usernow'];
+  
 //Import connection setting for DB
 require_once 'dbconfig.php';
 $dbconnect = "host=$host port=5432 dbname=$db user=$username password=$password";
