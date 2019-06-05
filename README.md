@@ -1,5 +1,5 @@
 # Heroku-practice-with-Project-planning
-Migrate and activate a scrumlike project planning tool on Heroku with enabled backend.
+Develop, migrate and activate a scrumlike project planning tool on Heroku with enabled backend.(based on locally created project app)
 
 The application is up and running at Heroku: https://infinite-temple-34967.herokuapp.com
 
